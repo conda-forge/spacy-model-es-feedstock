@@ -1,7 +1,7 @@
 {% set prefix = "spacy-model-" %}
 {% set lang = "es" %}
 {% set name = lang + "_core_news" %}
-{% set version = "2.0.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ prefix }}{{ lang|lower }}
@@ -10,10 +10,10 @@ package:
 source:
   - folder: sm
     url: https://github.com/explosion/spacy-models/releases/download/{{ name }}_sm-{{ version }}/{{ name }}_sm-{{ version }}.tar.gz
-    sha256: 3aa0aceb7fb2ea303c8145a5b5463c45054977a9073bda33abd84fc12ba321ad
+    sha256: 793275be8143592e54abe6e08c4099437bf137e6c158694698ca8468e393737d
   - folder: md
     url: https://github.com/explosion/spacy-models/releases/download/{{ name }}_md-{{ version }}/{{ name }}_md-{{ version }}.tar.gz
-    sha256: 7706040eec9b0978c33d97edb68bb5181d760daffe294b7020261b833e36050c
+    sha256: 9ffa3171231b4d53fcc73bdb44c0378e69090d66bea7620b4c55609afd8d15ce
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ test:
     - echo "make lint happy"
 
 outputs:
-  - name: {{prefix}}{{ name }}_{{ size }}
+  - name: {{ prefix }}{{ name }}_{{ size }}
     script: build.sh  # [unix]
     script: build.bat  # [win]
     requirements:
@@ -46,7 +46,7 @@ outputs:
 about:
   home: https://spacy.io
   license: CC BY-SA 3.0
-  summary: 'Spanish multi-task CNN trained on the AnCora and WikiNER corpus'
+  summary: Spanish multi-task CNN trained on the AnCora and WikiNER corpus
 
   doc_url: https://spacy.io/models/es
 
