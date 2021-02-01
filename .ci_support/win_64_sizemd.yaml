@@ -7,6 +7,8 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- '2.7'
+- 3.8.* *_cpython
 size:
 - md
+target_platform:
+- win-64
