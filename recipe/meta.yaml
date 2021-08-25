@@ -47,7 +47,7 @@ about:
   home: https://spacy.io
   license: CC BY-SA 3.0
   summary: 'Spanish multi-task CNN trained on the AnCora and WikiNER corpus'
-
+  license_file: LICENSE.txt
   doc_url: https://spacy.io/models/es
 
 extra:
