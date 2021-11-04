@@ -1,7 +1,7 @@
 {% set prefix = "spacy-model-" %}
 {% set lang = "es" %}
 {% set name = lang + "_core_news" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ prefix }}{{ lang|lower }}
@@ -10,10 +10,10 @@ package:
 source:
   - folder: sm
     url: https://github.com/explosion/spacy-models/releases/download/{{ name }}_sm-{{ version }}/{{ name }}_sm-{{ version }}.tar.gz
-    sha256: 86e3a750e5fd7cd8362df2cf7e2d4bdeb31d00d97af335333693051cd85b71f8
+    sha256: f6b2a41ea69e3db867f94218c23635ff6838d18e7b1288e7a26798cf8c98f997
   - folder: md
     url: https://github.com/explosion/spacy-models/releases/download/{{ name }}_md-{{ version }}/{{ name }}_md-{{ version }}.tar.gz
-    sha256: 83b4003ebccf8e55ec6f06320a3ce55481577e9aa07f0093d3b9043f474b9474
+    sha256: 1268eee873f3144539c3e6e8a344ddeb0d0a945a46d392d91c4668e94122c241
 
 build:
   noarch: python
@@ -46,7 +46,7 @@ outputs:
 about:
   home: https://spacy.io
   license: CC-BY-SA-3.0
-  summary: 'Spanish multi-task CNN trained on the AnCora and WikiNER corpus'
+  summary: Spanish multi-task CNN trained on the AnCora and WikiNER corpus
   license_file: LICENSE
   doc_url: https://spacy.io/models/es
 
