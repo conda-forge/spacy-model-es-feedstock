@@ -3,7 +3,7 @@ About spacy-model-es
 
 Home: https://spacy.io
 
-Package license: CC BY-SA 3.0
+Package license: CC-BY-SA-3.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/spacy-model-es-feedstock/blob/master/LICENSE.txt)
 
@@ -112,7 +112,8 @@ conda search spacy-model-es_core_news_md --channel conda-forge
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
