@@ -16,6 +16,14 @@ jobs:
         CONFIG: linux_64_sizesm
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_sizelg:
+        CONFIG: linux_64_sizelg
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+      linux_64_sizetrf:
+        CONFIG: linux_64_sizetrf
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360
 
   steps:

@@ -14,6 +14,12 @@ jobs:
       win_64_sizesm:
         CONFIG: win_64_sizesm
         UPLOAD_PACKAGES: 'True'
+      win_64_sizelg:
+        CONFIG: win_64_sizelg
+        UPLOAD_PACKAGES: 'True'
+      win_64_sizetrf:
+        CONFIG: win_64_sizetrf
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
@@ -75,7 +81,7 @@ jobs:
         call activate base
         run_conda_forge_build_setup
       displayName: conda-forge build setup
-    
+
 
     # Special cased version setting some more things!
     - script: |
