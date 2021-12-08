@@ -113,7 +113,6 @@ Current build status
                 </a>
               </td>
             </tr>
-
           </tbody>
         </table>
       </details>
