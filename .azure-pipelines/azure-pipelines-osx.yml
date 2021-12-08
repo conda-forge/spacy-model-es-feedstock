@@ -8,17 +8,41 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_sizemd:
-        CONFIG: osx_64_sizemd
+      osx_64_python3.7.____cpythonsizelg:
+        CONFIG: osx_64_python3.7.____cpythonsizelg
         UPLOAD_PACKAGES: 'True'
-      osx_64_sizesm:
-        CONFIG: osx_64_sizesm
+      osx_64_python3.7.____cpythonsizemd:
+        CONFIG: osx_64_python3.7.____cpythonsizemd
         UPLOAD_PACKAGES: 'True'
-      osx_64_sizelg:
-        CONFIG: osx_64_sizelg
+      osx_64_python3.7.____cpythonsizesm:
+        CONFIG: osx_64_python3.7.____cpythonsizesm
         UPLOAD_PACKAGES: 'True'
-      osx_64_sizetrf:
-        CONFIG: osx_64_sizetrf
+      osx_64_python3.7.____cpythonsizetrf:
+        CONFIG: osx_64_python3.7.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.8.____cpythonsizelg:
+        CONFIG: osx_64_python3.8.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.8.____cpythonsizemd:
+        CONFIG: osx_64_python3.8.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.8.____cpythonsizesm:
+        CONFIG: osx_64_python3.8.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.8.____cpythonsizetrf:
+        CONFIG: osx_64_python3.8.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.9.____cpythonsizelg:
+        CONFIG: osx_64_python3.9.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.9.____cpythonsizemd:
+        CONFIG: osx_64_python3.9.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.9.____cpythonsizesm:
+        CONFIG: osx_64_python3.9.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.9.____cpythonsizetrf:
+        CONFIG: osx_64_python3.9.____cpythonsizetrf
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
@@ -29,6 +53,11 @@ jobs:
       export OSX_FORCE_SDK_DOWNLOAD="1"
       export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
       export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
+        export IS_PR_BUILD="True"
+      else
+        export IS_PR_BUILD="False"
+      fi
       ./.scripts/run_osx_build.sh
     displayName: Run OSX build
     env:
