@@ -14,6 +14,12 @@ jobs:
       osx_64_sizesm:
         CONFIG: osx_64_sizesm
         UPLOAD_PACKAGES: 'True'
+      osx_64_sizelg:
+        CONFIG: osx_64_sizelg
+        UPLOAD_PACKAGES: 'True'
+      osx_64_sizetrf:
+        CONFIG: osx_64_sizetrf
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:
