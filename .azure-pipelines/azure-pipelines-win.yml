@@ -8,17 +8,41 @@ jobs:
     vmImage: vs2017-win2016
   strategy:
     matrix:
-      win_64_sizemd:
-        CONFIG: win_64_sizemd
+      win_64_python3.7.____cpythonsizelg:
+        CONFIG: win_64_python3.7.____cpythonsizelg
         UPLOAD_PACKAGES: 'True'
-      win_64_sizesm:
-        CONFIG: win_64_sizesm
+      win_64_python3.7.____cpythonsizemd:
+        CONFIG: win_64_python3.7.____cpythonsizemd
         UPLOAD_PACKAGES: 'True'
-      win_64_sizelg:
-        CONFIG: win_64_sizelg
+      win_64_python3.7.____cpythonsizesm:
+        CONFIG: win_64_python3.7.____cpythonsizesm
         UPLOAD_PACKAGES: 'True'
-      win_64_sizetrf:
-        CONFIG: win_64_sizetrf
+      win_64_python3.7.____cpythonsizetrf:
+        CONFIG: win_64_python3.7.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.8.____cpythonsizelg:
+        CONFIG: win_64_python3.8.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.8.____cpythonsizemd:
+        CONFIG: win_64_python3.8.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.8.____cpythonsizesm:
+        CONFIG: win_64_python3.8.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.8.____cpythonsizetrf:
+        CONFIG: win_64_python3.8.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.9.____cpythonsizelg:
+        CONFIG: win_64_python3.9.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.9.____cpythonsizemd:
+        CONFIG: win_64_python3.9.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.9.____cpythonsizesm:
+        CONFIG: win_64_python3.9.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.9.____cpythonsizetrf:
+        CONFIG: win_64_python3.9.____cpythonsizetrf
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
@@ -61,7 +85,7 @@ jobs:
 
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: 'python=3.6 conda-build conda "conda-forge-ci-setup=3" pip' # Optional
+        packageSpecs: 'python=3.9 conda-build conda "conda-forge-ci-setup=3" pip boa' # Optional
         installOptions: "-c conda-forge"
         updateConda: true
       displayName: Install conda-build and activate environment
@@ -81,7 +105,7 @@ jobs:
         call activate base
         run_conda_forge_build_setup
       displayName: conda-forge build setup
-
+    
 
     # Special cased version setting some more things!
     - script: |
@@ -95,7 +119,7 @@ jobs:
 
     - script: |
         call activate base
-        conda.exe build "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
+        conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1
@@ -116,4 +140,4 @@ jobs:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)
         FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
         STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
-      condition: and(succeeded(), not(eq(variables['UPLOAD_PACKAGES'], 'False')))
+      condition: and(succeeded(), not(eq(variables['UPLOAD_PACKAGES'], 'False')), not(eq(variables['Build.Reason'], 'PullRequest')))
