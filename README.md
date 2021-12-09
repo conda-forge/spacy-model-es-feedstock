@@ -128,7 +128,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-spacy--model--es_core_news_md-green.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_md) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/spacy-model-es_core_news_md.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_md) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/spacy-model-es_core_news_md.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_md) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/spacy-model-es_core_news_md.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_md) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-spacy--model--es_core_news_sm-green.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_sm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/spacy-model-es_core_news_sm.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_sm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/spacy-model-es_core_news_sm.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_sm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/spacy-model-es_core_news_sm.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_sm) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-spacy--model--es_core_news_lg-green.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_lg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/spacy-model-es_core_news_lg.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_lg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/spacy-model-es_core_news_lg.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_lg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/spacy-model-es_core_news_lg.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_lg) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-spacy--model--es_core_news_trf-green.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_trf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/spacy-model-es_core_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_trf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/spacy-model-es_core_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_trf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/spacy-model-es_core_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_core_news_trf) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-spacy--model-es_dep_news_trf-green.svg)](https://anaconda.org/conda-forge/spacy-model-es_dep_news_trf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/spacy-model-es_dep_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_dep_news_trf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/spacy-model-es_dep_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_dep_news_trf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/spacy-model-es_dep_news_trf.svg)](https://anaconda.org/conda-forge/spacy-model-es_dep_news_trf) |
 
 Installing spacy-model-es
 =========================
@@ -140,10 +140,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `spacy-model-es_core_news_md, spacy-model-es_core_news_sm spacy-model-es_core_news_lg spacy-model-es_core_news_trf` can be installed with:
+Once the `conda-forge` channel has been enabled, `spacy-model-es_core_news_md, spacy-model-es_core_news_sm spacy-model-es_core_news_lg spacy-model-es_dep_news_trf` can be installed with:
 
 ```
-conda install spacy-model-es_core_news_md spacy-model-es_core_news_sm spacy-model-es_core_news_lg spacy-model-es_core_news_trf
+conda install spacy-model-es_core_news_md spacy-model-es_core_news_sm spacy-model-es_core_news_lg spacy-model-es_dep_news_trf
 ```
 
 It is possible to list all of the versions of `spacy-model-es_core_news_md` available on your platform with:
