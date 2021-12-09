@@ -8,22 +8,54 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_sizemd:
-        CONFIG: linux_64_sizemd
+      linux_64_python3.7.____cpythonsizelg:
+        CONFIG: linux_64_python3.7.____cpythonsizelg
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_sizesm:
-        CONFIG: linux_64_sizesm
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.7.____cpythonsizemd:
+        CONFIG: linux_64_python3.7.____cpythonsizemd
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_sizelg:
-        CONFIG: linux_64_sizelg
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.7.____cpythonsizesm:
+        CONFIG: linux_64_python3.7.____cpythonsizesm
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_sizetrf:
-        CONFIG: linux_64_sizetrf
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.7.____cpythonsizetrf:
+        CONFIG: linux_64_python3.7.____cpythonsizetrf
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.8.____cpythonsizelg:
+        CONFIG: linux_64_python3.8.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.8.____cpythonsizemd:
+        CONFIG: linux_64_python3.8.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.8.____cpythonsizesm:
+        CONFIG: linux_64_python3.8.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.8.____cpythonsizetrf:
+        CONFIG: linux_64_python3.8.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.9.____cpythonsizelg:
+        CONFIG: linux_64_python3.9.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.9.____cpythonsizemd:
+        CONFIG: linux_64_python3.9.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.9.____cpythonsizesm:
+        CONFIG: linux_64_python3.9.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_python3.9.____cpythonsizetrf:
+        CONFIG: linux_64_python3.9.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
 
   steps:
@@ -44,6 +76,11 @@ jobs:
         export CI=azure
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+        if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
+          export IS_PR_BUILD="True"
+        else
+          export IS_PR_BUILD="False"
+        fi
         .scripts/run_docker_build.sh
     displayName: Run docker build
     env:
