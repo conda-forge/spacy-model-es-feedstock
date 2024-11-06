@@ -7,7 +7,7 @@
 {% set name = lang + "_core_news" %}
 {% endif %}
 
-{% set version = "3.1.0" %}
+{% set version = "3.4.0" %}
 
 
 package:
@@ -17,16 +17,16 @@ package:
 source:
   - folder: sm
     url: https://github.com/explosion/spacy-models/releases/download/es_core_news_sm-{{ version }}/es_core_news_sm-{{ version }}.tar.gz
-    sha256: 86e3a750e5fd7cd8362df2cf7e2d4bdeb31d00d97af335333693051cd85b71f8
+    sha256: 52411c0975bfde3b1671db38516203eb76ff330be0d42a41881cb321763218f3
   - folder: md
     url: https://github.com/explosion/spacy-models/releases/download/es_core_news_md-{{ version }}/es_core_news_md-{{ version }}.tar.gz
-    sha256: 83b4003ebccf8e55ec6f06320a3ce55481577e9aa07f0093d3b9043f474b9474
+    sha256: 86622fb814719fe0de8c9746e6dbf7bf96975ab2c8b98519f1098af10c9ce4b9
   - folder: lg
     url: https://github.com/explosion/spacy-models/releases/download/es_core_news_lg-{{ version }}/es_core_news_lg-{{ version }}.tar.gz
-    sha256: b1b700d60a21d24198ae2042b745c6e7a9defa4c0d576af8e67b726201ea33cb
+    sha256: 8912b554267d24f98e58ed362687b66a91f01ab7dfbc3778781774d694537c84
   - folder: trf
     url: https://github.com/explosion/spacy-models/releases/download/es_dep_news_trf-{{ version }}/es_dep_news_trf-{{ version }}.tar.gz
-    sha256: 839e72fdf38a27eebf216f4314171cc3a41e97ceb9e4e898eb319e81ceb387dc
+    sha256: c2bc9abd43eed4b83dbd8c679ff934211e6843b8606fa16fe24b43cb3119f40e
 
 build:
   number: 0
@@ -68,7 +68,7 @@ outputs:
 about:
   home: https://spacy.io
   license: CC-BY-SA-3.0
-  summary: 'Spanish multi-task CNN trained on the AnCora and WikiNER corpus'
+  summary: Spanish multi-task CNN trained on the AnCora and WikiNER corpus
   license_file: LICENSE
   doc_url: https://spacy.io/models/es
 
