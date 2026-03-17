@@ -5,20 +5,32 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-10.15
+    vmImage: macOS-11
   strategy:
     matrix:
-      osx_64_python3.7.____cpythonsizelg:
-        CONFIG: osx_64_python3.7.____cpythonsizelg
+      osx_64_python3.10.____cpythonsizelg:
+        CONFIG: osx_64_python3.10.____cpythonsizelg
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpythonsizemd:
-        CONFIG: osx_64_python3.7.____cpythonsizemd
+      osx_64_python3.10.____cpythonsizemd:
+        CONFIG: osx_64_python3.10.____cpythonsizemd
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpythonsizesm:
-        CONFIG: osx_64_python3.7.____cpythonsizesm
+      osx_64_python3.10.____cpythonsizesm:
+        CONFIG: osx_64_python3.10.____cpythonsizesm
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpythonsizetrf:
-        CONFIG: osx_64_python3.7.____cpythonsizetrf
+      osx_64_python3.10.____cpythonsizetrf:
+        CONFIG: osx_64_python3.10.____cpythonsizetrf
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.11.____cpythonsizelg:
+        CONFIG: osx_64_python3.11.____cpythonsizelg
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.11.____cpythonsizemd:
+        CONFIG: osx_64_python3.11.____cpythonsizemd
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.11.____cpythonsizesm:
+        CONFIG: osx_64_python3.11.____cpythonsizesm
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.11.____cpythonsizetrf:
+        CONFIG: osx_64_python3.11.____cpythonsizetrf
         UPLOAD_PACKAGES: 'True'
       osx_64_python3.8.____cpythonsizelg:
         CONFIG: osx_64_python3.8.____cpythonsizelg

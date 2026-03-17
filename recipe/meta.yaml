@@ -29,7 +29,7 @@ source:
     sha256: 839e72fdf38a27eebf216f4314171cc3a41e97ceb9e4e898eb319e81ceb387dc
 
 build:
-  number: 0
+  number: 1
 
 test:
   commands:
